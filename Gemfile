@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 # Add mongo per class instructions
-gem 'mongoid'
+gem 'mongoid', git:'https://github.com/mongoid/mongoid.git'
 
 
 # Use SCSS for stylesheets

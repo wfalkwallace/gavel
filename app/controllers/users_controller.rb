@@ -7,16 +7,30 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    respond_to do |format|
+      format.html
+      format.json { render json: @users }
+    end
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @user }
+    end
   end
 
   # GET /users/new
   def new
     @user = User.new
+    respond_to do |format|
+      format.html
+      format.json { render json: @user }
+    end
   end
 
   # GET /users/1/edit
@@ -42,8 +56,9 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    @user = User.find(params[:id])
     respond_to do |format|
-      if @user.update(user_params)
+      if @user.update_attributes(params[:id])
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
@@ -56,6 +71,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    @user = User.find(params[:id])
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url }
@@ -73,4 +89,4 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email)
     end
-end
+  end

@@ -1,4 +1,8 @@
 Gavel::Application.routes.draw do
+  resources :posts
+
+  resources :comments
+
   resources :users
   resources :sessions, only: [:create, :destroy, :new]
 

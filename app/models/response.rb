@@ -2,7 +2,7 @@ class Response
   include Mongoid::Document
 
   belongs_to :author, class_name: "User"
-  belongs_to :voter, class_name: "User", inverse_of: :vote
+  has_and_belongs_to_many :voters, class_name: "User", inverse_of: :vote
   belongs_to :post
 
 

@@ -3,7 +3,8 @@ class Post
 
   has_many :comments
   has_many :responses
-  has_and_belongs_to_many :authors, class_name: "Users"
+  belongs_to :complainant, class_name: "Users", inverse_of: :complaint
+  belongs_to :defendant, class_name: "Users", inverse_of: :defense
 
   field :complaint, type: String
   field :defense, type: String

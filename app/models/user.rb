@@ -1,7 +1,8 @@
 class User
   include Mongoid::Document
 
-  has_many :comments
+  has_many :comments, inverse_of: :author
+  belongs_to :vote, class_name "Comment", inverse_of: :voters
   has_and_belongs_to_many :posts
 
 

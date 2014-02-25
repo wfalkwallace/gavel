@@ -16,18 +16,36 @@ User
  |_last_name
  |_email
  |_password
- |_date_created
- |_last_visit
+ |_created_at
+ |_last_seen
+ |_comments (has_many)                      # a user can make any number of comments
+ |_responses (has_many)                     # a user can make any number of responses
+ |_complaints:post (has_many)               # a user can be the complainant on any number of posts
+ |_defenses:post (has_many)                 # a user can be the defendant on any number of posts
+ |_votes:response (has_and_belongs_to_many) # a user can vote on any number of responses, and a response can have any number of users vote on it
 Post
- \_[text] (hash from user? associative somehow? anonymous)
- |_[user]
- |_date_created
- |_updated
+ \_complaint
+ |_defense
+ |_created_at
+ |_updated_at
+ |_responses (has_many)                     # a post can have any number of responses
+ |_comments (has_many)                      # a post can have any number of comments
+ |_complainant:user (belongs_to)            # a post has one complainant
+ |_defendant:user (belongs_to)              # a post has one defendant
+Response
+ \_vote_count                               # the number of upvotes a response has
+ |_body                                     # the opinion
+ |_verdict                                  # the proposed solution
+ |_created_at
+ |_updated_at
+ |_author:user (belongs_to)                 # a response is written by a single user
+ |_voters:user (has_and_belongs_to_many)    # a response can have any number of users vote on it, and a user can vote on any number of responses
+ |_post (belongs_to)                        # a response is associated with a post
 Comment
- \_text
- |_post
- |_user
- |_votes (users?)
- |_date_created
- |_updated
+ \_body
+ |_created_at
+ |_updated_at
+ |_author:user (belongs_to)                 # a comment is written by a user
+ |_post (belongs_to)                        # a comment can be associated with a post
+ |_response (belongs_to)                    # a comment can be associated with a response
 ```

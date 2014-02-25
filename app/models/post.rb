@@ -1,7 +1,7 @@
 class Post
   include Mongoid::Document
 
-  has_many :comments
+  has_many :comments, as: :commentable
   has_many :responses
   belongs_to :complainant, class_name: "User", inverse_of: :complaint
   belongs_to :defendant, class_name: "User", inverse_of: :defense

@@ -31,7 +31,7 @@ Post
  |_created_at
  |_updated_at
  |_responses (has_many)                     # a post can have any number of responses
- |_comments (has_many)                      # a post can have any number of comments
+ |_comments (has_many; polymorphic)         # a post can have any number of comments
  |_complainant:user (belongs_to)            # a post has one complainant
  |_defendant:user (belongs_to)              # a post has one defendant
 Response
@@ -43,13 +43,13 @@ Response
  |_author:user (belongs_to)                 # a response is written by a single user
  |_voters:user (has_and_belongs_to_many)    # a response can have any number of users vote on it, and a user can vote on any number of responses
  |_post (belongs_to)                        # a response is associated with a post
+ |_comments (has_many; polymorphic)         # a response can have any number of comments
 Comment
  \_body
  |_created_at
  |_updated_at
  |_author:user (belongs_to)                 # a comment is written by a user
- |_post (belongs_to)                        # a comment can be associated with a post
- |_response (belongs_to)                    # a comment can be associated with a response
+ |_commentable (belongs_to, polymorphic)    # a comment can be associated with a post or a response; it is polymorphic
 ```
 
 ---

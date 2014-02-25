@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vote_count: 
+  body: 
+  verdict: 
+  created_at: 
+  updated_at: 
+
+two:
+  vote_count: 
+  body: 
+  verdict: 
+  created_at: 
+  updated_at: 

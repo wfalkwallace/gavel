@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Vote count:</strong>
+  <%= @response.vote_count %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @response.body %>
+</p>
+
+<p>
+  <strong>Verdict:</strong>
+  <%= @response.verdict %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @response.created_at %>
+</p>
+
+<p>
+  <strong>Updated at:</strong>
+  <%= @response.updated_at %>
+</p>
+
+<%= link_to 'Edit', edit_response_path(@response) %> |
+<%= link_to 'Back', responses_path %>

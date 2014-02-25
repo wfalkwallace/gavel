@@ -1,4 +1,6 @@
 Gavel::Application.routes.draw do
+  resources :responses
+
   resources :posts
 
   resources :comments

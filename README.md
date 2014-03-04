@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/wfalkwallace/gavel.png?branch=master)](https://travis-ci.org/wfalkwallace/gavel)
 Gavel
 =====
+[![Build Status](https://travis-ci.org/wfalkwallace/gavel.png?branch=master)](https://travis-ci.org/wfalkwallace/gavel)
 
 ---
 

@@ -5,9 +5,9 @@ namespace :sidewalk_data do
 
 		require 'csv'
 
-		data = "db/DCA_Sidewalk_Cafes"
+		file = "db/DCA_Sidewalk_Cafes.csv"
 
-		CSV.open(data) do |row|
+		CSV.open(file) do |row|
 			puts row
 		end
 

@@ -1,6 +1,5 @@
 class SidewalkCafe
   include Mongoid::Document
-
   field :dca_id, type: Integer
   field :business_name, type: String
   field :trade_name, type: String
@@ -16,5 +15,4 @@ class SidewalkCafe
   field :address_location, type: String
   field :phone, type: String
   field :lic_area_sqft, type: Integer
-
 end

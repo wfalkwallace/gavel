@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dca_id: 
+  business_name: 
+  trade_name: 
+  sidewalk_cafe_type: 
+  license_number: 
+  full_address: 
+  address_building: 
+  address_street_name: 
+  city: 
+  state: 
+  zip_code: 
+  borough: 
+  address_location: 
+  phone: 
+  lic_area_sqft: 
+
+two:
+  dca_id: 
+  business_name: 
+  trade_name: 
+  sidewalk_cafe_type: 
+  license_number: 
+  full_address: 
+  address_building: 
+  address_street_name: 
+  city: 
+  state: 
+  zip_code: 
+  borough: 
+  address_location: 
+  phone: 
+  lic_area_sqft: 

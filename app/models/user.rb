@@ -14,4 +14,6 @@ class User
   field :password, type: String
   field :created_at, type: DateTime
   field :last_seen, type: DateTime
+
+  validates :email, :presence => true
 end

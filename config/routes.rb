@@ -8,8 +8,6 @@ Gavel::Application.routes.draw do
   resources :users
   resources :sessions, only: [:create, :destroy, :new]
 
-  get '/home', to: 'welcome#index'
-
   get '/logout', to: 'sessions#destroy', as: 'logout'
   get '/login', to: 'sessions#new', as: 'login'
   get '/signup', to: 'users#new', as: 'signup'

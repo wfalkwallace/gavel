@@ -11,9 +11,14 @@ class User
   field :first_name, type: String
   field :last_name, type: String
   field :email, type: String
-  field :password, type: String
+  field :encrypted_password, type: String
   field :created_at, type: DateTime
   field :last_seen, type: DateTime
 
-  validates :email, :presence => true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :email, presence: true, format: { with: /\A\w+@\w+.[a-z]{2,}\Z/ }, uniqueness: true
+  validates :encrypted_password, presence: true, length: { minimum: 4 }
+  validates :created_at, presence: true
+  validates :last_seen, presence: true
 end

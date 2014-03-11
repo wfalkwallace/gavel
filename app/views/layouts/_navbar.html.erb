@@ -1,8 +1,12 @@
 <div class="navbar">
 	<ul class="nav navbar-nav">
 		<li class="active" id="home"><a href="/">Home</a></li>
+		<%= if not login %>
 		<li id="login"><a href="/login">Login</a></li>
+		<%= endif %>
 		<li id="signup"><a href="/login">Signup</a></li>
+		<%= if login %>
 		<li id="logout"><a href="/logout">Logout</a></li>
+		<%= endif %>
 	</ul>
 </div>

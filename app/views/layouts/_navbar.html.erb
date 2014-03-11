@@ -1,12 +1,12 @@
 <div class="navbar">
 	<ul class="nav navbar-nav">
 		<li class="active" id="home"><a href="/">Home</a></li>
-		<%= if not login %>
+		<% if not current_user.present? %>
 		<li id="login"><a href="/login">Login</a></li>
-		<%= endif %>
+		<% end %>
 		<li id="signup"><a href="/login">Signup</a></li>
-		<%= if login %>
+		<% if current_user.present? %>
 		<li id="logout"><a href="/logout">Logout</a></li>
-		<%= endif %>
+		<% end %>
 	</ul>
 </div>

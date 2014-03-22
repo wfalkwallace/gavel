@@ -1,7 +1,7 @@
 Gavel
 =====
 [![Build Status](https://travis-ci.org/wfalkwallace/gavel.png?branch=master)](https://travis-ci.org/wfalkwallace/gavel)
-[![Code Climate](https://codeclimate.com/github/wfalkwallace/gavel.png)](https://codeclimate.com/github/wfalkwallace/gavel)
+
 ---
 
 This app is for the final project of the Columbia CS3101 Ruby on Rails class.
@@ -53,4 +53,4 @@ Comment
 ```
 
 ---
-
+[![Code Climate](https://codeclimate.com/github/wfalkwallace/gavel.png)](https://codeclimate.com/github/wfalkwallace/gavel)

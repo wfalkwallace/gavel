@@ -11,9 +11,10 @@ class User
   field :first_name, type: String
   field :last_name, type: String
   field :email, type: String
+  field :role, type: String, default: "user"
   field :encrypted_password, type: String
-  field :created_at, type: DateTime
-  field :last_seen, type: DateTime
+  field :created_at, type: DateTime, default: -> { Time.now }
+  field :last_seen, type: DateTime, default: -> { Time.now }
 
   validates :first_name, presence: true
   validates :last_name, presence: true

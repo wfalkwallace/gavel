@@ -53,4 +53,4 @@ Comment
 ```
 
 ---
-
+[![Code Climate](https://codeclimate.com/github/wfalkwallace/gavel.png)](https://codeclimate.com/github/wfalkwallace/gavel)

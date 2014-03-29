@@ -1,9 +1,8 @@
 class Post
   include Mongoid::Document
 
-  has_many :comments, as: :commentable
-  has_many :responses
   belongs_to :complainant, class_name: "User", inverse_of: :complaint
+  has_many :responses
 
   field :complaint, type: String
   field :created_at, type: DateTime, default: -> { Time.now }

@@ -10,7 +10,7 @@ class Post
   field :updated_at, type: DateTime, default: -> { Time.now }
 
   validates :complainant, presence: true
-  validates :complaint, presence: true, length: { maximum: 150 }
+  validates :complaint, presence: true, length: { maximum: 140 }
   validates :created_at, presence: true
   validates :updated_at, presence: true
 end

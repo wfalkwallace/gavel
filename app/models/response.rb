@@ -9,8 +9,8 @@ class Response
   field :vote_count, type: Integer
   field :body, type: String
   field :verdict, type: Integer
-  field :created_at, type: DateTime
-  field :updated_at, type: DateTime
+  field :created_at, type: DateTime, default: -> { Time.now }
+  field :updated_at, type: DateTime, default: -> { Time.now }
 
   validates :author, presence: true
   validates :post, presence: true

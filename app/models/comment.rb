@@ -5,8 +5,8 @@ class Comment
   belongs_to :commentable, polymorphic: true
 
   field :body, type: String
-  field :created_at, type: DateTime
-  field :updated_at, type: DateTime
+  field :created_at, type: DateTime, default: -> { Time.now }
+  field :updated_at, type: DateTime, default: -> { Time.now }
 
   validates :author, presence: true
   validates :commentable, presence: true

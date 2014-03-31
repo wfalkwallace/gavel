@@ -26,16 +26,14 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :assets do
-  # Use SCSS for stylesheets
-  gem 'sass-rails', '~> 4.0.0'
-  # Use CoffeeScript for .js.coffee assets and views
-  gem 'coffee-rails', '~> 4.0.0'
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 4.0.0'
+# Use CoffeeScript for .js.coffee assets and views
+gem 'coffee-rails', '~> 4.0.0'
 
-  # Foundation assets gems
-  gem 'compass-rails'
-  gem 'zurb-foundation'
-end
+# Foundation assets gems
+# gem 'compass-rails'
+# gem 'zurb-foundation'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

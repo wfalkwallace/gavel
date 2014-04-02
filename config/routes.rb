@@ -1,24 +1,25 @@
 Gavel::Application.routes.draw do
-  resources :responses
 
-  resources :posts
+  # You can have the root of your site routed with "root"
+  root 'posts#show'
 
-  resources :comments
+  get '/signup', to: 'users#new', as: 'signup'
+  get '/login', to: 'sessions#new', as: 'login'
+  get '/logout', to: 'sessions#destroy', as: 'logout'
+
+  get '/about', to: 'users#new', as: 'about'
+  get '/contact', to: 'users#new', as: 'contact'
 
   resources :users
+  resources :posts
+  resources :responses
   resources :sessions, only: [:create, :destroy, :new]
 
-  get '/logout', to: 'sessions#destroy', as: 'logout'
-  get '/login', to: 'sessions#new', as: 'login'
-  get '/signup', to: 'users#new', as: 'signup'
-
+  # get '/users/:id' to: 'users#show'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  root 'users#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

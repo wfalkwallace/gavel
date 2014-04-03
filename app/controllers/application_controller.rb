@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :require_user
+  before_action :set_start_time
+
 
   helper_method :current_user
   def current_user
@@ -25,7 +27,7 @@ class ApplicationController < ActionController::Base
   	if current_user
   		return true
   	else
-  		redirect_to new_session_url
+  		redirect_to :new_session
   	end
   end
 
@@ -33,16 +35,28 @@ class ApplicationController < ActionController::Base
     if current_user && current_user.id == params[:id]
       return true
     else
-      redirect_to new_session_url
+      redirect_to :new_session
     end
   end
 
   def require_admin
-    if current_user && current_user.role == "admin"
+    if current_user && current_user.role == 'admin'
       return true
     else
-      redirect_to new_session_url
+      redirect_to :new_session
     end
+  end
+
+  def require_user_access
+    if current_user && current_user.id == params[:id] || current_user.role == 'admin'
+      return true
+    else
+      redirect_to :new_session
+    end
+  end
+
+  def set_start_time
+    @start_time = Time.now.usec
   end
 
 end

@@ -1,14 +1,17 @@
 Gavel::Application.routes.draw do
 
+  get "page/about"
+  get "page/contact"
   # You can have the root of your site routed with "root"
-  root 'posts#show'
+  root 'posts#index'
 
   get '/signup', to: 'users#new', as: 'signup'
   get '/login', to: 'sessions#new', as: 'login'
   get '/logout', to: 'sessions#destroy', as: 'logout'
 
-  get '/about', to: 'users#new', as: 'about'
-  get '/contact', to: 'users#new', as: 'contact'
+  get '/foo', :to => redirect('/foo.html')
+  get '/about', :to => redirect('/about.html'), as: 'about'
+  get '/contact', :to => redirect('/contact.html'), as: 'contact'
 
   resources :users
   resources :posts

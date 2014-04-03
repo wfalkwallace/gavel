@@ -1,4 +1,7 @@
 <hr>
-<footer>
-  <p>&copy; William Falk-Wallace</p>
+<footer class="text-center">
+	<p>
+		<span id="copyright" title="Page Rendered in <%= sprintf('%.3f', (Time.now.usec - @start_time).abs / 1000000.0) %> seconds">&copy;</span>
+		<%= link_to 'William Falk-Wallace', 'http://www.falk-wallace.com' %> <%= Time.now.year %>
+	</p>
 </footer>

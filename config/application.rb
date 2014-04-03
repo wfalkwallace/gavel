@@ -24,5 +24,14 @@ module Gavel
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    
+    config.assets.paths << "#{Rails}/vendor/assets/fonts"
+    
+    config.assets.paths << "#{Rails}/vendor/assets/icons/48x48"
+    config.assets.paths << "#{Rails}/vendor/assets/icons/64x64"
+    config.assets.paths << "#{Rails}/vendor/assets/icons/128x128"
+    config.assets.paths << "#{Rails}/vendor/assets/icons/256x256"
+    config.assets.paths << "#{Rails}/vendor/assets/icons/512x512"
+
   end
 end

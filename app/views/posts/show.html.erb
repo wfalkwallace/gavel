@@ -16,8 +16,9 @@
 						<%= @post.body %>
 					</p>
 					<div class="text-right">
-						<!-- <a href="/upvote">upvote</a> -->
-						<!-- <a href="/upvote">downvote</a> -->
+						<span id="copyright" title="upvotes/total"><%= @post.upvote_count %>/<%= @post.upvote_count + @post.downvote_count %></span>
+            <%= link_to "upvote", :action => :upvote, :id => @post.id %></h2>
+            <%= link_to "downvote", :action => :downvote, :id => @post.id %></h2>
 					</div>
 				</div>
 			</div>

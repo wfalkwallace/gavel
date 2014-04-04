@@ -44,7 +44,7 @@ class ApplicationController < ActionController::Base
     if current_user && current_user.role == 'admin'
       return true
     else
-      redirect_to :new_session
+      redirect_to :root, notice: 'You must be an admin to view that page.'
     end
   end
 

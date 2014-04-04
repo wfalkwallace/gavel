@@ -8,8 +8,8 @@ class Post
 
   field :title, type: String
   field :body, type: String
-  field :upvote_count, type: Integer, default: -> { 0 }
-  field :downvote_count, type: Integer, default: -> { 0 }
+  field :upvote_count, type: Integer, default: 0
+  field :downvote_count, type: Integer, default: 0
   field :created_at, type: DateTime, default: -> { Time.now }
   field :updated_at, type: DateTime, default: -> { Time.now }
 

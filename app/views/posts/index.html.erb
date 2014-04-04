@@ -1,29 +1,30 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
     <% @posts.each do |post| %>
-      <div class="row">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <div class="share-tray">
-              <ul>
-                <li><span class="icomoon icon-facebook3"></span></li>
-                <li><span class="icomoon icon-twitter3"></span></li>
-              </ul>
-            </div>
-            <h3>
-              <%= post.title %>
-            </h3>
-            <p>
-              <%= post.body %>
-            </p>
-            <div class="text-right">
-              <!-- <a href="/upvote">upvote</a> -->
-              <!-- <a href="/upvote">downvote</a> -->
-              <%= link_to 'Show', post %>
-            </div>
+    <div class="row">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="share-tray">
+            <ul>
+              <li><span class="icomoon icon-facebook3"></span></li>
+              <li><span class="icomoon icon-twitter3"></span></li>
+            </ul>
+          </div>
+          <h3>
+            <%= post.title %>
+          </h3>
+          <p>
+            <%= post.body %>
+          </p>
+          <div class="text-right">
+            <span id="copyright" title="upvotes/total"><%= post.upvote_count %>/<%= post.upvote_count + post.downvote_count %></span>
+            <%= link_to "upvote", :action => :upvote, :id => post.id %></h2>
+            <%= link_to "downvote", :action => :downvote, :id => post.id %></h2>
+            <%= link_to 'Show', post %>
           </div>
         </div>
       </div>
+    </div>
     <% end %>
   </div> <!-- /row -->
 </div> <!-- /com-md-8 -->

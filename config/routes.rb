@@ -17,6 +17,11 @@ Gavel::Application.routes.draw do
   resources :responses
   resources :sessions, only: [:create, :destroy, :new]
 
+  get '/posts/:id/upvote', to: 'posts#upvote', as: 'upvote'
+  get '/posts/:id/downvote', to: 'posts#downvote', as: 'downvote'
+
+  get '/admin', to: 'users#index', as: 'admin'
+
   # get '/users/:id' to: 'users#show'
 
 

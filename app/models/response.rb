@@ -10,7 +10,7 @@ class Response
 
   validates :author, presence: true
   validates :post, presence: true
-  validates :body, presence: true, length: { maximum: 50 }
+  validates :body, presence: true
   validates :created_at, presence: true
   validates :updated_at, presence: true
 end

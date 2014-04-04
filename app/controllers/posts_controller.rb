@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   skip_before_filter :require_user, :only => [:index, :show]
 
   # GET /posts
@@ -64,6 +64,43 @@ class PostsController < ApplicationController
     end
   end
 
+  # upvote /posts/1/upvote
+  def upvote
+    if @current_user.upvotes.where(id: params[:id]).exists? ||
+      @current_user.downvotes.where(id: params[:id]).exists?
+      redirect_to :back
+      flash[:notice] = "You can't vote twice!"
+    else
+      @post.inc(upvote_count: 1)
+      @current_user.upvotes << @post
+
+      @post.save
+      @current_user.save
+
+      redirect_to :back
+      flash[:notice] = "Vote successfully recorded!"
+    end
+  end
+
+  # upvote /posts/1/downvote
+  def downvote
+    p "THIS:", @current_user.downvotes.where(id: params[:id]).exists?
+    if @current_user.downvotes.where(id: params[:id]).exists? ||
+      @current_user.upvotes.where(id: params[:id]).exists?
+      redirect_to :back
+      flash[:notice] = "You can't vote twice!"
+    else
+      @post.inc(downvote_count: 1)
+      @current_user.downvotes << @post
+
+      @post.save
+      @current_user.save
+
+      redirect_to :back
+      flash[:notice] = "Vote successfully recorded!"
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -74,4 +111,4 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :body)
     end
-end
+  end

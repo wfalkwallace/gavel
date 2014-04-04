@@ -19,14 +19,16 @@ class User
 
   validates :name, presence: true
   validates :email, presence: true, format: { with: /\A\w+@\w+.[a-z]{2,}\Z/ }, uniqueness: true
-  validates :password, presence: true
+  validates :password_hash, presence: true
   validates :created_at, presence: true
   validates :last_seen, presence: true
 
   def encrypt_password
-    self.password_salt = BCrypt::Engine.generate_salt
-    self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
-    self.password = ""
+    if !password.empty?
+      self.password_salt = BCrypt::Engine.generate_salt
+      self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
+      self.password = ""
+    end
   end
 
   def self.authenticate(email, password)

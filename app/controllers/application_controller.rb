@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :require_user
+  before_action :current_user
   before_action :set_start_time
 
 
@@ -20,7 +21,6 @@ class ApplicationController < ActionController::Base
   	else
   		return nil
   	end
-    return @current_user
   end
 
 

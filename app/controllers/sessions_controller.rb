@@ -3,13 +3,13 @@ class SessionsController < ApplicationController
 
   #login
   def create
-  	
-  	user = User.where(email: params[:email]).first
-  	
+
+    user = User.authenticate(params[:email], params[:password])
+
     if user
       session[:current_user_id] = user.id
 
-    	redirect_to users_url
+    	redirect_to user
     else
       redirect_to signup
     end
@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
   	redirect_to :new_session
   end
 
-  #form 
-  def new 
+  #form
+  def new
   end
 end

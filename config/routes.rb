@@ -1,5 +1,6 @@
 Gavel::Application.routes.draw do
 
+  devise_for :users
   get "page/about"
   get "page/contact"
   # You can have the root of your site routed with "root"
@@ -9,9 +10,8 @@ Gavel::Application.routes.draw do
   get '/login', to: 'sessions#new', as: 'login'
   get '/logout', to: 'sessions#destroy', as: 'logout'
 
-  get '/foo', :to => redirect('/foo.html')
-  get '/about', :to => redirect('/about.html'), as: 'about'
-  get '/contact', :to => redirect('/contact.html'), as: 'contact'
+  get '/about', to: 'pages#about', as: 'about'
+  get '/contact', to: 'pages#contact', as: 'contact'
 
   resources :users
   resources :posts

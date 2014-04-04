@@ -3,11 +3,12 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  # devise field extension
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
   # before_action :require_user
   before_action :authenticate_user!
   before_action :set_start_time
-    # devise field extension
-  before_action :configure_permitted_parameters, if: :devise_controller?
 
 
   helper_method :current_user
@@ -23,7 +24,6 @@ class ApplicationController < ActionController::Base
   	else
   		return nil
   	end
-    return @current_user
   end
 
 

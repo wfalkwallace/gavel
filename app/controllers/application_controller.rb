@@ -3,11 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  # devise field extension
-  before_action :configure_permitted_parameters, if: :devise_controller?
-
-  # before_action :require_user
-  before_action :authenticate_user!
+  before_action :require_user
   before_action :set_start_time
 
 
@@ -62,10 +58,6 @@ class ApplicationController < ActionController::Base
 
   def set_start_time
     @start_time = Time.now.usec
-  end
-
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :name
   end
 
 end

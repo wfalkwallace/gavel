@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="row">
 	<div class="col-md-8 col-md-offset-2">
 		<div class="row">
@@ -18,7 +16,8 @@
 						<%= @post.body %>
 					</p>
 					<div class="text-right">
-						<a href="/upvote">upvote</a> <a href="/upvote">downvote</a>
+						<!-- <a href="/upvote">upvote</a> -->
+						<!-- <a href="/upvote">downvote</a> -->
 					</div>
 				</div>
 			</div>
@@ -32,7 +31,8 @@
 			</ul>
 		</div>
 		<div class="row text-center">
-		<%= link_to 'Post a response', new_response_url, {class: 'btn btn-primary navbar-btn', role: 'button'} %>
+			<h2>Post a response:</h2>
+			<%= render 'responses/form' %>
 		</div>
 
 	</div> <!-- /row -->

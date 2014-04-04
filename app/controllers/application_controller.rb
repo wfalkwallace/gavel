@@ -20,6 +20,7 @@ class ApplicationController < ActionController::Base
   	else
   		return nil
   	end
+    return @current_user
   end
 
 
@@ -48,8 +49,8 @@ class ApplicationController < ActionController::Base
   end
 
   def require_access
-    if current_user &&
-      ( current_user.id == params[:id] || current_user.role == 'admin' )
+    if @current_user &&
+      ( @current_user.id.to_s == params[:id].to_s || @current_user.role.to_s  == 'admin' )
       return true
     else
       redirect_to :new_session

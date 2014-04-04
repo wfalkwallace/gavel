@@ -27,10 +27,12 @@ class ResponsesController < ApplicationController
   def create
     @response = Response.new(response_params)
     @response.author = @current_user
+    @post = Post.find(params[:post_id])
+    @response.post = @post
 
     respond_to do |format|
       if @response.save
-        format.html { redirect_to @response, notice: 'Response was successfully created.' }
+        format.html { redirect_to @post, notice: 'Response was successfully created.' }
         format.json { render action: 'show', status: :created, location: @response }
       else
         format.html { render action: 'new' }

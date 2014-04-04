@@ -13,15 +13,15 @@
 
 <div class="field input-group widen">
     <%= f.label :name, class: 'sr-only' %><br>
-    <%= f.text_field :name, placeholder: 'name' %>
+    <%= f.text_field :name, class: 'form-control', placeholder: 'name' %>
   </div>
 <div class="field input-group widen">
     <%= f.label :email, class: 'sr-only' %><br>
-    <%= f.text_field :email, placeholder: 'email' %>
+    <%= f.email_field :email, class: 'form-control', placeholder: 'email' %>
   </div>
 <div class="field input-group widen">
     <%= f.label :encrypted_password, class: 'sr-only' %><br>
-    <%= f.datetime_select :encrypted_password, placeholder: 'password' %>
+    <%= f.password_field :encrypted_password, class: 'form-control', placeholder: 'password' %>
   </div>
   <div class="actions">
     <%= f.submit class: 'btn btn-success widen' %>

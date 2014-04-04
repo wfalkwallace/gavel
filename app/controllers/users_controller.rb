@@ -13,7 +13,6 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    render "layouts"
   end
 
   # GET /users/new

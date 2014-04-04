@@ -8,7 +8,7 @@
 				<span class='icon-bar'></span>
 			</button>
 			<%= link_to root_url, class: 'navbar-brand' do %>
-				<span class="icomoon icon-hammer2"> Gavel</span>
+			<span class="icomoon icon-hammer2"> Gavel</span>
 			<% end %>
 		</div>
 		<div class='navbar-collapse collapse'>
@@ -17,15 +17,15 @@
 				<li><%= link_to 'Contact us', page_contact_url %></li>
 			</ul>
 			<div class='navbar-right'>
-				<% if user_signed_in? %>
-					<p class="navbar-text">
-						Signed in as <strong><%= link_to current_user.name, edit_user_registration_url, class: 'navbar-link' %></strong>
-					</p>
-					<%= link_to 'Make a decision', new_post_url, {class: 'btn btn-primary navbar-btn', role: 'button'} %>
-					<%= link_to 'Log out', destroy_user_session_url, method: :delete, class: 'btn btn-danger navbar-btn', role: 'button' %>
+				<% if @current_user.present? %>
+				<p class="navbar-text">
+					Signed in as <%= link_to @current_user.name, {controller: "users", action: "show", id: @current_user.id}, class: 'navbar-link' %>
+				</p>
+				<%= link_to 'Make a decision', new_post_url, {class: 'btn btn-primary navbar-btn', role: 'button'} %>
+				<%= link_to 'Log out', logout_url, {class: 'btn btn-danger navbar-btn', role: 'button'} %>
 				<% else %>
-					<%= link_to 'Sign up', new_user_registration_url, {class: 'btn btn-warning navbar-btn', role: 'button'} %>
-					<%= link_to 'Log in', new_user_session_url, {class: 'btn btn-info navbar-btn', role: 'button'} %>
+				<%= link_to 'Sign up', signup_url, {class: 'btn btn-warning navbar-btn', role: 'button'} %>
+				<%= link_to 'Log in', login_url, {class: 'btn btn-info navbar-btn', role: 'button'} %>
 				<% end %>
 			</div>
 		</div>

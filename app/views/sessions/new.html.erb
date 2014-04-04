@@ -1,15 +1,20 @@
-<%= form_tag sessions_url, method: :post do %>
-
-  <div class="field">
-    <%= label_tag :name %><br>
-    <%= text_field_tag :name %>
-  </div>
-  <div class="field">
-    <%= label_tag :email %><br>
-    <%= text_field_tag :email %>
-  </div>
-  <div class="actions">
-    <%= submit_tag "Sign in" %>
-  </div>
-
-<% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="text-center">
+      <h2>Sign in:</h2>
+      <%= form_tag sessions_url, method: :post do %>
+      <div class="field input-group widen">
+        <%= label_tag :email, nil, class: 'sr-only', autofocus: true %><br>
+        <%= email_field_tag :email, nil, class: 'form-control', placeholder: 'email'  %>
+      </div>
+      <div class="field input-group widen">
+        <%= label_tag :encrypted_password, nil, class: 'sr-only' %><br>
+        <%= password_field_tag :encrypted_password, nil, class: 'form-control', placeholder: 'password'  %>
+      </div>
+      <div class="actions">
+        <%= submit_tag "Sign in", class: 'btn btn-success widen' %>
+      </div>
+      <% end %>
+    </div>
+  </div> <!-- /row -->
+</div> <!-- /com-md-8 -->

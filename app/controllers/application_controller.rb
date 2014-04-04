@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   # before_action :require_user
   before_action :authenticate_user!
   before_action :set_start_time
+    # devise field extension
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
 
   helper_method :current_user
@@ -21,6 +23,7 @@ class ApplicationController < ActionController::Base
   	else
   		return nil
   	end
+    return @current_user
   end
 
 
@@ -59,6 +62,10 @@ class ApplicationController < ActionController::Base
 
   def set_start_time
     @start_time = Time.now.usec
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :name
   end
 
 end

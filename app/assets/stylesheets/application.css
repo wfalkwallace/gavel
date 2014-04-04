@@ -19,17 +19,17 @@
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('../assets/glyphicons-halflings-regular.eot');
-  src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
-       url('../assets/glyphicons-halflings-regular.woff') format('woff'), 
-       url('../assets/glyphicons-halflings-regular.ttf') format('truetype'), 
+  src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+       url('../assets/glyphicons-halflings-regular.woff') format('woff'),
+       url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),
        url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 @font-face {
   font-family: 'FontAwesome';
   src: url('../assets/fontawesome-webfont.eot?v=4.0.3');
-  src: url('../assets/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), 
-  	   url('../assets/fontawesome-webfont.woff?v=4.0.3') format('woff'), 
-  	   url('../assets/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), 
+  src: url('../assets/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'),
+  	   url('../assets/fontawesome-webfont.woff?v=4.0.3') format('woff'),
+  	   url('../assets/fontawesome-webfont.ttf?v=4.0.3') format('truetype'),
   	   url('../assets/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
@@ -45,6 +45,11 @@
   font-style: normal;
 }
 */
+
+html,
+body {
+  height: 100%;
+}
 
 #copyright {
   cursor:help;
@@ -62,6 +67,10 @@
   border-bottom: 1px solid #ddd;
 }
 
+.navbar .btn {
+  color:#fff;
+}
+
 .navbar-default {
   background-color: #fff;
   background-image: none;
@@ -76,13 +85,14 @@
   background-color: transparent;
 }
 
-#about-descrip {
-  position:absolute;
-  top:100px;
-  width:70%;
-  padding:2%;
-  padding-top:0;
-  margin-left:10%;
-  background:rgba(0,0,0,.8);
-  color:white;
+#wrapper {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -60px;
+  padding: 0 0 60px;
+}
+
+#footer {
+  height: 60px;
+  background-color: #fff;
 }

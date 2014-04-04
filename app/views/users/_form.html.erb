@@ -11,19 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+<div class="field input-group widen">
+    <%= f.label :name, class: 'sr-only' %><br>
+    <%= f.text_field :name, placeholder: 'name' %>
   </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+<div class="field input-group widen">
+    <%= f.label :email, class: 'sr-only' %><br>
+    <%= f.text_field :email, placeholder: 'email' %>
   </div>
-  <div class="field">
-    <%= f.label :created_at %><br>
-    <%= f.datetime_select :created_at %>
+<div class="field input-group widen">
+    <%= f.label :encrypted_password, class: 'sr-only' %><br>
+    <%= f.datetime_select :encrypted_password, placeholder: 'password' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-success widen' %>
   </div>
 <% end %>
+

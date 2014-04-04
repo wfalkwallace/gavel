@@ -1,6 +1,7 @@
 class ResponsesController < ApplicationController
   before_action :set_response, only: [:show, :edit, :update, :destroy]
-  # skip_before_filter :require_user, :only => [:index, :show]
+  skip_before_filter :require_user, :only => [:index, :show]
+  skip_before_filter :authenticate_user!, :only => [:index, :show]
 
   # GET /responses
   # GET /responses.json
@@ -26,6 +27,7 @@ class ResponsesController < ApplicationController
   # POST /responses.json
   def create
     @response = Response.new(response_params)
+    @response.author = @current_user
 
     respond_to do |format|
       if @response.save
@@ -70,6 +72,6 @@ class ResponsesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def response_params
-      params.require(:response).permit(:vote_count, :body, :verdict, :created_at, :updated_at)
+      params.require(:response).permit(:body, :verdict, :created_at, :updated_at)
     end
 end

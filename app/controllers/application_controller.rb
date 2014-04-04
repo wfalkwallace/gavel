@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_action :require_user
+  # before_action :require_user
+  before_action :authenticate_user!
   before_action :set_start_time
 
 
@@ -47,8 +48,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def require_user_access
-    if current_user && current_user.id == params[:id] || current_user.role == 'admin'
+  def require_access
+    if current_user &&
+      ( current_user.id == params[:id] || current_user.role == 'admin' )
       return true
     else
       redirect_to :new_session

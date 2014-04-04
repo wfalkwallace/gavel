@@ -1,29 +1,21 @@
 <%= form_for(@response) do |f| %>
-  <% if @response.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@response.errors.count, "error") %> prohibited this response from being saved:</h2>
+<% if @response.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@response.errors.count, "error") %> prohibited this response from being saved:</h2>
 
-      <ul>
-      <% @response.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% @response.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_field :body %>
-  </div>
-  <div class="field">
-    <%= f.label :created_at %><br>
-    <%= f.text_field :created_at %>
-  </div>
-  <div class="field">
-    <%= f.label :updated_at %><br>
-    <%= f.text_field :updated_at %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="field input-group widen">
+  <%= f.label :body, class: 'sr-only' %><br>
+  <%= f.text_area :body, rows: 3, class: 'form-control', placeholder: 'let us know what you think...' %>
+</div>
+<div class="actions">
+  <%= f.submit class: 'btn btn-success widen' %>
+</div>
 <% end %>

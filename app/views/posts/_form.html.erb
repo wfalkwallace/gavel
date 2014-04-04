@@ -10,15 +10,16 @@
   </ul>
 </div>
 <% end %>
-<div class="field">
-  <%= f.label :title %><br>
+
+<div class="field input-group widen">
+  <%= f.label :title, class: 'sr-only' %><br>
   <%= f.text_field :title %>
 </div>
 <div class="field">
-  <%= f.label :body %><br>
+  <%= f.label :body, class: 'sr-only' %><br>
   <%= f.text_area :body %>
 </div>
 <div class="actions">
-  <%= f.submit %>
+  <%= f.submit class: 'btn btn-success widen' %>
 </div>
 <% end %>

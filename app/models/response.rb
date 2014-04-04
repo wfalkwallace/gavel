@@ -3,10 +3,7 @@ class Response
 
   belongs_to :author, class_name: "User"
   belongs_to :post
-  has_and_belongs_to_many :votes, class_name: "User", inverse_of: :votes
 
-  # TODO: check this defualt syntax
-  field :vote_count, type: Integer, default: -> { 0 }
   field :body, type: String
   field :created_at, type: DateTime, default: -> { Time.now }
   field :updated_at, type: DateTime, default: -> { Time.now }

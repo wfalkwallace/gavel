@@ -8,12 +8,12 @@
 
 <!--
  __      __  _______  __      __
-/\ \  __/\ \/\  ____\/\ \  __ \ \   
+/\ \  __/\ \/\  ____\/\ \  __ \ \
 \ \ \/\ \ \ \ \ \___ \ \ \ \ \ \ \
- \ \ \ \ \ \ \ \  __\ \ \ \ \ \ \ \ 
+ \ \ \ \ \ \ \ \  __\ \ \ \ \ \ \ \
   \ \ \_/ \_\ \ \ \    \ \ \_/ \_\ \
    \ \___/\___/\ \_\    \ \___/\___/
-    \/___//__/  \/_/     \/___//__/ 
+    \/___//__/  \/_/     \/___//__/
 -->
 
 <head>
@@ -25,7 +25,6 @@
   <style>
     body {
       padding-top: 75px;
-      padding-bottom: 20px;
     }
   </style>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
@@ -40,11 +39,19 @@
 
 <%= render "layouts/navbar" %>
 
-<div class="container">
+<div class="container" id="wrapper">
+
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
 <%= yield %>
+</div>
 
 <%= render "layouts/footer" %>
-</div>
 
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 </body>

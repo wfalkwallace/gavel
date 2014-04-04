@@ -57,13 +57,13 @@ Comment
 ####Final Project Requirements:
 1. See <https://github.com/shoupon/cs3101demo/pull/1>
 2.
-	- app/models/user.rb#L16
+	- <https://github.com/wfalkwallace/gavel/blob/master/app/models/user.rb#L16>
 	- `/admin`
 3. `/users/id`
 4. Features **3**, **6**, and **8** implemented
-	- app/views/layouts/_navbar.html.erb
+	- <https://github.com/wfalkwallace/gavel/blob/master/app/views/layouts/_navbar.html.erb>
 	- `/users/1/edit`
-	- vendor/assets/stylesheets
+	- <https://github.com/wfalkwallace/gavel/blob/master/vendor/assets/stylesheets>
 
 ---
 [![Code Climate](https://codeclimate.com/github/wfalkwallace/gavel.png)](https://codeclimate.com/github/wfalkwallace/gavel)
